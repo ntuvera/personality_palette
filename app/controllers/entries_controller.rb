@@ -1,7 +1,11 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
-    render json: @entries.to_json
+    @entries = User.find(params[:user_id]).entries.all
+    # render json: @entries.to_json
+  end
+
+  def show
+    @entry = User.find(params[:user_id]).Entry.find(params[:id])
   end
 
   def new

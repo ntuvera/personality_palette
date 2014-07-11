@@ -1,0 +1,15 @@
+<div class="container">
+
+  <% @entries.each do |entry| %>
+  <ul>
+    <li>Event: <%= entry.event %></li>
+    <li>When: <%= entry.date %></li>
+    <li>Feeling: <%= entry.emotion %></li>
+    <li>Longitude: <%= entry.longitude %></li>
+    <li>Latitude: <%= entry.latitude %></li>
+    <li>Temperature: <%= entry.weather %></li>
+    <li>Conditions: <%= entry.weather_img %></li>
+    <li>Description: <%= entry.description %></li>
+  </ul>
+  <% end %>
+</div>
