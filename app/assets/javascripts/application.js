@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require geolocation
+//= require weather
+//= require colorWheel
 //= require_tree .

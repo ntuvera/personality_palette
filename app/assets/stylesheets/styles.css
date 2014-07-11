@@ -1,0 +1,14 @@
+div {
+  background-color: lightgray;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+#weather-info{
+  height:300;
+  width:300;
+}
+
+#plate {
+  z-index:1;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+
+    <div class="two-third column color-box">
+    </div>
+    <div class="one-third column weather-box">
+      <div style="height: 300px;" id="weather-info">
+      </div>
+    </div>
+    <div class="sixteen columns form-box">
+      <form id="entry-log" action="/entries" method="post">
+        <%= token_tag %>
+
+        <p>
+          Event:<input type="text" name="event">
+          Date:<input type="text" name="date">
+          Emotion:<input id="color-to-emotion" type="text" name="emotion">
+          Temperature(F): <input type="text" name="weather_temp">
+          Weather Condition: <input type="text" name="weather_image">
+          Longitude: <input type='text' name="lon">
+          Latitude: <input type='text' name="lat">
+          Description:<textarea name="desc" rows="5" cols="50" form="entry-log"></textarea>
+          <input type="submit" value="Add Entry">
+        </p>
+      </form>
+
+    </div>
+    <div class="sixteen columns map-box">
+      <div id="map-canvas"></div>
+    </div>
+
+  </div>
+</div>
