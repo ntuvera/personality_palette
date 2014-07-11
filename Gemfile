@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -36,5 +36,17 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+gem 'pry', group: [:development, :test]
+gem 'pry-nav', group: [:development, :test]
 
+# testing
+gem 'rspec'
+gem 'rspec-rails'
+
+
+# Production gems
+gem 'rails_12factor', group: :production
+gem 'font-awesome-rails'
+
+gem 'heroku'
