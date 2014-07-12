@@ -7,12 +7,13 @@ class UsersController < ApplicationController
     @user = current_user
     @users = User.all
     # @entries = current_user.entries
+
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    redirect_to user_entry_path
+    # redirect_to user_entry_path
   end
 
   # GET /users/new
@@ -72,6 +73,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
+      binding.pry
       params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end

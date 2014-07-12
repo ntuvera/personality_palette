@@ -34,13 +34,13 @@ function getWeather(){
         // $('.weather-info').text("feels like: "+feeltemp);
         // $('.weather-info').text(weather);
         $('.weather-info').append($('<img>').attr('src', weathericon));
-        $('input[name="lat"]').val(lat);
-        $('input[name="lon"]').val(lon);
-        $('input[name="weather_temp"]').val(temp_f);
-        $('input[name="weather_image"]').val(weather);
+        $('input[data-name="lat"]').val(lat);
+        $('input[data-name="lon"]').val(lon);
+        $('input[data-name="weather"]').val(temp_f);
+        $('input[data-name="weather_con"]').val(weather);
 
         // add date to form for now
-        $('input[name="date"]').val(new Date());
+        $('input[data-name="date"]').val(new Date());
       }
     });
   }

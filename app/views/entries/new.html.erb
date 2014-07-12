@@ -7,20 +7,18 @@
       </div>
     </div>
     <div class="sixteen columns form-box">
-      <form id="entry-log" action="/entries" method="post">
+      <form id="entry-log" action="/users/<%= @user.id %>/entries" method="post">
         <%= token_tag %>
-
-        <p>
-          Event:<input type="text" name="event">
-          Date:<input type="text" name="date">
-          Emotion:<input id="color-to-emotion" type="text" name="emotion">
-          Temperature(F): <input type="text" name="weather_temp">
-          Weather Condition: <input type="text" name="weather_image">
-          Longitude: <input type='text' name="lon">
-          Latitude: <input type='text' name="lat">
-          Description:<textarea name="desc" rows="5" cols="50" form="entry-log"></textarea>
+          <input type='hidden' name="entry[user_id]" value="<%= @user.id%>">
+          Event:<input type="text" name="entry[event]">
+          Date:<input type="text" name="entry[date]" data-name="date">
+          Emotion:<input id="color-to-emotion" type="text" name="entry[emotion]">
+          Temperature(F): <input type="text" name="entry[weather]" data-name="weather">
+          Weather Condition: <input type="text" name="entry[weather_img]" data-name="weather_con">
+          Longitude: <input type='text' name="entry[longitude]" data-name="lon">
+          Latitude: <input type='text' name="entry[latitude]" data-name="lat">
+          Description:<textarea name="entry[description]" rows="5" cols="50" form="entry-log"></textarea>
           <input type="submit" value="Add Entry">
-        </p>
       </form>
 
     </div>
