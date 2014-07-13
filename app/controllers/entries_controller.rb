@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
     @user = User.find(params[:user_id])
     @entries = User.find(params[:user_id]).entries.order('created_at ASC')
     binding.pry
+    @reds
   end
 
   def show
