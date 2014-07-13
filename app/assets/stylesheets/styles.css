@@ -1,8 +1,7 @@
-div {
-  background-color: lightgray;
-  margin: 10px;
-  border: 1px solid black;
-}
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
 
 #weather-info{
   height:300;
@@ -11,4 +10,49 @@ div {
 
 #plate {
   z-index:1;
+}
+
+/* ------------------------------- */
+#nav{
+  background: #6699FF;
+  width: 100%;
+}
+#nav h2{
+  color: #FFFFFF;
+  font-family:;
+}
+#nav ul{
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+#nav li{
+  list-style: none;
+  display: inline-block;
+}
+#nav ul a{
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  background: #EBF4FA;
+}
+
+#flash{
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+}
+
+#flash.hidden {
+  display: none;
+}
+
+#log-window{
+  border: 5px outset lightgray;
+  border-radius: 25px;
+  padding: 30px 30px 30px 30px;
+}
+
+#log-window input{
+  width: 100%;
 }

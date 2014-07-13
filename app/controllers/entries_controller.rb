@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @entries = User.find(params[:user_id]).entries.all
-    # render json: @entries.to_json
+    @entries_json = @entries.to_json
   end
 
   def show
@@ -17,7 +17,7 @@ class EntriesController < ApplicationController
 
   def create
     entry = Entry.create(entry_params)
-    binding.pry
+    redirect_to user_entries_path
   end
 
   def show
@@ -26,7 +26,7 @@ class EntriesController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry).permit(:user_id, :date, :event, :emotion, :longitude, :latitude, :weather, :weather_img, :description)
+    params.require(:entry).permit(:user_id, :date, :event, :emotion, :emotion_num, :longitude, :latitude, :weather, :weather_img, :description)
   end
 
 end

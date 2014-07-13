@@ -7,21 +7,39 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div id="nav">
-  <% if current_user %>
-      <%= link_to "Edit Profile-do not use", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
+<body class="<%= controller_name %>">
+
+  <div id="nav">
+    <div class="container">
+
+        <h2 class="ten columns">
+          Personality Palette
+        </h2>
+        <ul class="six columns">
+        <% if current_user %>
+          <li><%= link_to "Logout", :logout, method: :post %></li>
+        <% else %>
+            <li><%= link_to "Register", new_user_path %></li>
+            <li><%= link_to "Login", :login %></li>
+        <% end %>
+        </ul>
+    </div>
   </div>
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
+
+  <div id="flash">
+    <div class="container">
+      <div class="sixteen columns">
+        <% if current_user %>
+          <p class="session-log" id="notice"><%= flash[:notice] %></p>
+        <% else %>
+          <p class="session-log" id="notice"><%= flash[:notice] %></p>
+          <p class="session-log" id="alert"><%= flash[:alert] %></p>
+        <% end %>
+      </div>
+    </div>
   </div>
-<%= yield %>
+
+ <%= yield %>
 
 </body>
 </html>

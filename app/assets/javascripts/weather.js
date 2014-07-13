@@ -20,9 +20,11 @@ function getWeather(){
         var temp_f = parsed_json['current_observation']['temp_f'];
         var weather = parsed_json['current_observation']['weather']
         var weathericon = parsed_json['current_observation']['icon_url']
+        var weathericon = parsed_json['current_observation']['icon_url']
         var feeltemp = parsed_json['current_observation']['feelslike_string']
         $('#weather-info').append($('<div>').attr('class', 'weather-info'));
         $('.weather-info').text(location+" "+temp_f+" "+feeltemp+" "+ weather);
+        $('.weather-info').append($('<img>').attr('src', weathericon));
         $('input[data-name="lat"]').val(lat);
         $('input[data-name="lon"]').val(lon);
         $('input[data-name="weather"]').val(temp_f);

@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   def index
     @user = current_user
     @users = User.all
-    # @entries = current_user.entries
+
   end
 
   def show
-    # redirect_to user_entry_path
+    @entries = User.find(params[:id]).entries.all
   end
 
   def new

@@ -9,21 +9,21 @@
     <div class="sixteen columns form-box">
       <form id="entry-log" action="/users/<%= @user.id %>/entries" method="post">
         <%= token_tag %>
+          <input type='hidden' name="entry[date]" data-name="date">
+          <input type='hidden' name="entry[longitude]" data-name="lon">
+          <input type='hidden' name="entry[latitude]" data-name="lat">
           <input type='hidden' name="entry[user_id]" value="<%= @user.id%>">
+          <input type='hidden' name="entry[emotion_num]" id="emo_num">
           Event:<input type="text" name="entry[event]">
-          Date:<input type="text" name="entry[date]" data-name="date">
           Emotion:<input id="color-to-emotion" type="text" name="entry[emotion]">
           Temperature(F): <input type="text" name="entry[weather]" data-name="weather">
           Weather Condition: <input type="text" name="entry[weather_img]" data-name="weather_con">
-          Longitude: <input type='text' name="entry[longitude]" data-name="lon">
-          Latitude: <input type='text' name="entry[latitude]" data-name="lat">
           Description:<textarea name="entry[description]" rows="5" cols="50" form="entry-log"></textarea>
           <input type="submit" value="Add Entry">
       </form>
 
     </div>
     <div class="sixteen columns map-box">
-      <div id="map-canvas"></div>
     </div>
 
   </div>

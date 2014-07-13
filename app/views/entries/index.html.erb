@@ -1,16 +1,30 @@
 <div class="container">
 
+  <!-- script tag to pass variables from controller to javascript-->
+  <%= javascript_tag "var entries = #{@entries.to_json};" %>
+
   <% @entries.each do |entry| %>
-  <ul>
-    <li>Event: <%= entry.event %></li>
-    <li>When: <%= entry.date %></li>
-    <li>Feeling: <%= entry.emotion %></li>
-    <li>Longitude: <%= entry.longitude %></li>
-    <li>Latitude: <%= entry.latitude %></li>
-    <li>Temperature: <%= entry.weather %></li>
-    <li>Conditions: <%= entry.weather_img %></li>
-    <li>Description: <%= entry.description %></li>
-  </ul>
-  <hr>
+    <div class="entry-display">
+      <ul>
+        <li>Event: <%= entry.event %></li>
+        <li>When: <%= entry.date %></li>
+        <li>Feeling: <%= entry.emotion %></li>
+        <li>Longitude: <%= entry.longitude %></li>
+        <li>Latitude: <%= entry.latitude %></li>
+        <li>Temperature: <%= entry.weather %></li>
+        <li>Conditions: <%= entry.weather_img %></li>
+        <li>Description: <%= entry.description %></li>
+      </ul>
+    </div>
   <% end %>
+
+  <div>
+    <%= button_to "New Entry", new_user_entry_path, :class => "button", :method => :get  %>
+    <button id="back" name="back"> < </button>
+    <button id="forward" name="forward"> > </button>
+    <label id="currentMonth"></label>
+  </div>
+
+  <div id="chart"></div>
+
 </div>

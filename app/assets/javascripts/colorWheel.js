@@ -69,36 +69,42 @@ window.onload=function(){
           })
           .on("click", function() {
             // var emotions = ["Angry", "Afraid", "Surprised", "Happy", "Sad", "Disgusted"]
-            console.log(self.pickedColor)     // how can I one-to-one this relationship? refactor
 
             if (self.pickedColor == "#FF0000"){
               var pickedEmotion = "Angry";
+              var pickedEmotionNo = 1
             }
             else if (self.pickedColor == "#FFA500"){
               var pickedEmotion = "Afraid";
-              plate.text('ahhh');
+              var pickedEmotionNo = 2
             }
             else if (self.pickedColor == "#FFFF00"){
               var pickedEmotion = "Surprised";
+              var pickedEmotionNo = 3
             }
             else if (self.pickedColor == "#00FF00"){
               var pickedEmotion = "Happy";
+              var pickedEmotionNo = 4
             }
             else if (self.pickedColor == "#0000FF"){
               var pickedEmotion = "Sad";
+              var pickedEmotionNo = 5
             }
             else if(self.pickedColor == "#800080"){
               var pickedEmotion = "Disgusted"
+              var pickedEmotionNo = 6
             }
             else{
-              var pickedEmotion = "Neutral";  // add validation for choosing an emotion
+              var pickedEmotion = "Neutral";
+              var pickedEmotionNo = 0  // add validation for choosing an emotion
             }
             console.log(pickedEmotion);
             $('#plate').remove()
-            $('.color-box').append($('<div>').attr('id','plate'));
-            $('#plate').text("");
-            $('#plate').text(pickedEmotion);
+            // $('.color-box').append($('<div>').attr('id','plate'));
+            // $('#plate').text("");
+            // $('#plate').text(pickedEmotion);
             $("#color-to-emotion").val(pickedEmotion);
+            $('#emo_num').val(pickedEmotionNo);
 
 
           });
