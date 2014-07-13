@@ -2,6 +2,7 @@ class EntriesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @entries = User.find(params[:user_id]).entries.order('created_at ASC')
+    binding.pry
   end
 
   def show
