@@ -130,7 +130,7 @@
 
         // This function is responsible for rendering the days of the month in the grid.
         function renderDaysOfMonth(month, year) {
-            $('#currentMonth').text(d3CalendarGlobals.monthToDisplayAsText() + ' ' + d3CalendarGlobals.yearToDisplay());
+            $('#month-name').append($('#currentMonth').text(d3CalendarGlobals.monthToDisplayAsText() + ' ' + d3CalendarGlobals.yearToDisplay()));
             // We get the days for the month we need to display based on the number of times the user has pressed
             // the forward or backward button.
             var daysInMonthToDisplay = d3CalendarGlobals.daysInMonth();

@@ -14,14 +14,3 @@
  *= require_self
  */
 
-.session-log{
-  text-align:right;
-}
-
-.entry-display{
-  width: 280px;
-  height: 300px;
-  display:inline-block;
-  padding: 5px;
-  background-image: url();
-}

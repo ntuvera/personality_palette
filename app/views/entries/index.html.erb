@@ -2,26 +2,28 @@
 
   <!-- script tag to pass variables from controller to javascript-->
   <%= javascript_tag "var entries = #{@entries.to_json};" %>
+  <div class="clearfix">
+    <% @entries.each do |entry| %>
+      <div class="entry-display <%= entry.emotion.downcase %>">
+        <ul>
+          <li>Date: <%= entry.date %></li>
+          <li>Event: <%= entry.event %></li>
+          <li>Feeling: <%= entry.emotion %></li>
+          <li>Longitude: <%= entry.longitude %></li>
+          <li>Latitude: <%= entry.latitude %></li>
+          <li>Temperature: <%= entry.weather %></li>
+          <li>Conditions: <%= entry.weather_img %></li>
+          <li>Description: <%= entry.description %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
 
-  <% @entries.each do |entry| %>
-    <div class="entry-display">
-      <ul>
-        <li>Event: <%= entry.event %></li>
-        <li>When: <%= entry.date %></li>
-        <li>Feeling: <%= entry.emotion %></li>
-        <li>Longitude: <%= entry.longitude %></li>
-        <li>Latitude: <%= entry.latitude %></li>
-        <li>Temperature: <%= entry.weather %></li>
-        <li>Conditions: <%= entry.weather_img %></li>
-        <li>Description: <%= entry.description %></li>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
+  <div id="calendar-control">
     <%= button_to "New Entry", new_user_entry_path, :class => "button", :method => :get  %>
-    <button id="back" name="back"> < </button>
-    <button id="forward" name="forward"> > </button>
+    <button id="back" class="calendar-control" name="back"> < </button>
+    <div id='month-name'class="calendar-control"></div>
+    <button id="forward" class="calendar-control" name="forward"> > </button>
     <label id="currentMonth"></label>
   </div>
 

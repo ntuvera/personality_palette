@@ -1,8 +1,7 @@
 class EntriesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @entries = User.find(params[:user_id]).entries.all
-    @entries_json = @entries.to_json
+    @entries = User.find(params[:user_id]).entries.order('created_at ASC')
   end
 
   def show
