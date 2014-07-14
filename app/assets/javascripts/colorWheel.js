@@ -98,7 +98,6 @@ window.onload=function(){
               var pickedEmotion = "Neutral";
               var pickedEmotionNo = 0  // add validation for choosing an emotion
             }
-            console.log(pickedEmotion);
             $('#plate').remove()
             // $('.color-box').append($('<div>').attr('id','plate'));
             // $('#plate').text("");
@@ -108,14 +107,6 @@ window.onload=function(){
 
 
           });
-          // .attr("clip-path","url(#circleClip)");
-
-          // svg.append("clipPath")
-          //   .attr("id", "circleClip")
-          //   .append("circle")
-          //   .attr("cx", 0)
-          //   .attr("cy", 0)
-          //   .attr("r", 75);
 
   };
 

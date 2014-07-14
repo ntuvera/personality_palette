@@ -1,7 +1,9 @@
+<!-- script tag to pass variables from controller to javascript-->
+<%= javascript_tag "var entries = #{@entries.to_json};" %>
+<%= javascript_tag "var data = #{@data};" %>
+
 <div class="container">
 
-  <!-- script tag to pass variables from controller to javascript-->
-  <%= javascript_tag "var entries = #{@entries.to_json};" %>
   <div class="clearfix">
     <% @entries.each do |entry| %>
       <div class="entry-display <%= entry.emotion.downcase %>">
@@ -19,7 +21,21 @@
     <% end %>
   </div>
 
-  <div id="calendar-control">
+  <div>
+    <svg width="800" height="500">
+        <g>
+            <defs>
+                <linearGradient id="myGradient">
+                </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="30" fill="url(#myGradient)"/>
+        </g>
+    </svg>
+  </div>
+
+
+
+  <!-- <div id="calendar-control">
     <%= button_to "New Entry", new_user_entry_path, :class => "button", :method => :get  %>
     <button id="back" class="calendar-control" name="back"> < </button>
     <div id='month-name'class="calendar-control"></div>
@@ -27,6 +43,6 @@
     <label id="currentMonth"></label>
   </div>
 
-  <div id="chart"></div>
+  <div id="chart"></div> -->
 
 </div>
