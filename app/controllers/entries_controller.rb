@@ -1,10 +1,11 @@
 class EntriesController < ApplicationController
+
   def index
     @user = User.find(params[:user_id])
     @entries = User.find(params[:user_id]).entries.order('created_at ASC')
-    binding.pry
-    @reds
+    @data_arr = Entry.data_to_array(params)
   end
+
 
   def show
     redirect_to entries_user_path(@user.id)
