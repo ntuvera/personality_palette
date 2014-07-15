@@ -26,9 +26,14 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find(params[:id])
-    Entry.update(entry_params)
-    Entry.save
+    entry = User.find(params[:user_id]).entries.find(params[:id])
+    @user = User.find(params[:user_id])
+  end
+
+  def update
+    edited_entry = User.find(params[:user_id]).entries.find(params[:id])
+    edited_entry.update(entry_params)
+    redirect_to "/users/#{user.id}/entries"
   end
 
   private

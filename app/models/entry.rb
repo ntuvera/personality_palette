@@ -1,11 +1,10 @@
 class Entry < ActiveRecord::Base
   belongs_to :user
-# refactor as an each
   def self.data_to_array(params)
     @colors = []
     @user = User.find(params[:user_id])
 
-    # logs total number of hits for an emotion... incorporate into table for data report?
+    # logs total number of hits for an emotion... incorporate into table for full data report?
     # @silvers = @user.entries.where(emotion_num:"0").count('date', :distinct => true)
     # @reds = @user.entries.where(emotion_num:"1").count('date', :distinct => true)
     # @oranges = @user.entries.where(emotion_num:"2").count('date', :distinct => true)
@@ -19,6 +18,7 @@ class Entry < ActiveRecord::Base
     @user.entries.select(:date).uniq.each do |entry|
       previous_dates.push(entry.date)
     end
+
     dates = previous_dates.sort!
 
     guide_line = [
@@ -33,7 +33,7 @@ class Entry < ActiveRecord::Base
     @data = []
     date_arr = []
 
-    # for date in dates
+    # for data in dates
     dates.each do |date|
       @user.entries.where(date:date).each do |entry|
         if entry.emotion_num =="0"

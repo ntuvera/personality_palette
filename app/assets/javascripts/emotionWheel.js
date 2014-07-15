@@ -15,8 +15,6 @@ function projectData(){
                       .attr("cx", function(d, i){ return (i* (960/data.length)) + 60})
                       .attr("cy", function(d, i){ return 60 })
                       .attr("fill", function(d, i){ return "url(#myGradient"+i+")" })
-                      // .attr("fill", "url(#myGradient"+data[i]+")")
-
 }
 
 function updateStops(data) {
@@ -26,59 +24,18 @@ function updateStops(data) {
 
     stops.enter().append('stop');
 
-    stops
-        .attr('offset', function(d) { return d[0]; })
-        .attr('stop-color', function(d) { return d[1]; });
+    stops.attr('offset', function(d) { return d[0]; })
+         .attr('stop-color', function(d) { return d[1]; });
 
     stops.exit().remove();
   }
 }
 
-
-
-
 function updateAll(data) {
     updateStops(data);
-
 }
-
-updateAll([
-  // array of stops goes here
-// ["30%", "#FFA500"], ["60%", "#00FF00"], ["90%", "#4B0082"]
-]);
-
-
-
-// function updateStops(data) {
-//   // for (var i=0; i < data.length; ++i;){
-//     var stops = d3.select("#myGradient").selectAll('stop')
-//       .data(data);
-
-
-//     stops.enter().append('stop');
-
-//     stops
-//       .attr('offset', function(d) { return d[0]; })
-//       .attr('stop-color', function(d) { return d[1]; });
-
-//     stops.exit().remove();
-//   // }
-// }
-
-
-
-// function updateAll(data) {
-//   updateStops(data);
-
-// }
-
-// // updateAll(data);
-
 
 setTimeout(function(){
   projectData();
   updateAll(data);
 }, 2000);
-
-
-// // window.onload=function(){ updateAll(data)}

@@ -1,6 +1,7 @@
 <!-- script tag to pass variables from controller to javascript-->
-<%= javascript_tag "var entries = #{@entries.to_json};" %>
-<%= javascript_tag "var data = #{@data};" %>
+<%= javascript_tag "var entries = #{@entries.to_json};
+                    var data = #{@data};  " %>
+
 
 
 
