@@ -1,5 +1,5 @@
 function projectData(){
-  var height = function(d, i){ return (data.length * 50) };
+  var height = function(d, i){ return 400 };
   var width = 940;
 
   var svg = d3.select("#emotion-wheel").append("svg")
@@ -78,7 +78,7 @@ updateAll([
 setTimeout(function(){
   projectData();
   updateAll(data);
-}, 500);
+}, 2000);
 
 
 // // window.onload=function(){ updateAll(data)}
