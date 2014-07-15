@@ -2,40 +2,48 @@
 <%= javascript_tag "var entries = #{@entries.to_json};" %>
 <%= javascript_tag "var data = #{@data};" %>
 
+
+
 <div class="container">
 
   <div class="clearfix">
     <% @entries.each do |entry| %>
       <div class="entry-display <%= entry.emotion.downcase %>">
         <ul>
-          <li>Date: <%= entry.date %></li>
-          <li>Event: <%= entry.event %></li>
-          <li>Feeling: <%= entry.emotion %></li>
-          <li>Longitude: <%= entry.longitude %></li>
-          <li>Latitude: <%= entry.latitude %></li>
-          <li>Temperature: <%= entry.weather %></li>
-          <li>Conditions: <%= entry.weather_img %></li>
-          <li>Description: <%= entry.description %></li>
+          <li><strong>Date</strong>: <%= entry.date %></li>
+          <li><strong>Event</strong>: <%= entry.event %></li>
+          <li><strong>Feeling</strong>: <%= entry.emotion %></li>
+          <li><strong>Temperature</strong>: <%= entry.weather %></li>
+          <li><strong>Conditions</strong>: <%= entry.weather_img %></li>
+          <li><strong>Description</strong>: <%= entry.description %></li>
         </ul>
       </div>
     <% end %>
   </div>
-
-  <div>
-    <svg width="800" height="500">
-        <g>
-            <defs>
-                <linearGradient id="myGradient">
-                </linearGradient>
-            </defs>
-            <circle cx="60" cy="60" r="30" fill="url(#myGradient)"/>
-        </g>
+  <div id="emotion-wheel">
+    <svg width="0" height="0">
+      <g>
+        <defs>
+          <linearGradient id="myGradient0">
+          </linearGradient>
+          <linearGradient id="myGradient1">
+          </linearGradient>
+          <linearGradient id="myGradient2">
+          </linearGradient>
+          <linearGradient id="myGradient3">
+          </linearGradient>
+          <linearGradient id="myGradient4">
+          </linearGradient>
+          <linearGradient id="myGradient5">
+          </linearGradient>
+          <linearGradient id="myGradient6">
+          </linearGradient>
+        </defs>
+            <!-- <circle cx="60" cy="60" r="30" fill="url(#myGradient)"/> -->
+      </g>
     </svg>
   </div>
-
-
-
-  <!-- <div id="calendar-control">
+  <div id="calendar-control">
     <%= button_to "New Entry", new_user_entry_path, :class => "button", :method => :get  %>
     <button id="back" class="calendar-control" name="back"> < </button>
     <div id='month-name'class="calendar-control"></div>
@@ -43,6 +51,6 @@
     <label id="currentMonth"></label>
   </div>
 
-  <div id="chart"></div> -->
+  <div id="chart"></div>
 
 </div>

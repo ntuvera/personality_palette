@@ -40,4 +40,5 @@ function getWeather(){
 
 $(function(){
   getWeather();
+  $('#weather-info').fadeIn('slow');
 });

@@ -1,4 +1,4 @@
-// Revealing module pattern to store some global data that will be shared between different functions.
+
 var d3CalendarGlobals = function() {
   var calendarWidth = 930,
   calendarHeight = 540,
@@ -6,7 +6,7 @@ var d3CalendarGlobals = function() {
   gridYTranslation = 40,
   cellColorForCurrentMonth = '#EAEAEA',
   cellColorForPreviousMonth = '#FFFFFF',
-  counter = 0, // Counter is used to keep track of the number of "back" and "forward" button presses and to calculate the month to display.
+  counter = 0,
   currentMonth = new Date().getMonth(),
   monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
   datesGroup;
@@ -29,14 +29,12 @@ var d3CalendarGlobals = function() {
   function publicDecrementCounter() { counter += 1; }
   function publicMonthToDisplay() {
     var dateToDisplay = new Date();
-    // We use the counter that keep tracks of "back" and "forward" presses to get the month to display.
     dateToDisplay.setMonth(currentMonth + counter);
     return dateToDisplay.getMonth();
   }
   function publicMonthToDisplayAsText() { return monthNames[publicMonthToDisplay()]; }
   function publicYearToDisplay() {
     var dateToDisplay = new Date();
-    // We use the counter that keep tracks of "back" and "forward" presses to get the year to display.
     dateToDisplay.setMonth(currentMonth + counter);
     return dateToDisplay.getFullYear();
   }
@@ -54,31 +52,21 @@ var d3CalendarGlobals = function() {
       return cellPositions;
   }
 
-  // This function generates all the days of the month. But since we have a 7 by 5 grid, we also need to get some of
-  // the days from the previous month and the next month. This way our grid will have all its cells filled. The days
-  // from the previous or the next month will have a different color though.
   function publicDaysInMonth() {
       var daysArray = [];
 
       var firstDayOfTheWeek = new Date(publicYearToDisplay(), publicMonthToDisplay(), 1).getDay();
       var daysInPreviousMonth = new Date(publicYearToDisplay(), publicMonthToDisplay(), 0).getDate();
 
-      // Lets say the first week of the current month is a Wednesday. Then we need to get 3 days from
-      // the end of the previous month. But we can't naively go from 29 - 31. We have to do it properly
-      // depending on whether the last month was one that had 31 days, 30 days or 28.
       for (i = 1; i <= firstDayOfTheWeek; i++) {
           daysArray.push([daysInPreviousMonth - firstDayOfTheWeek + i, cellColorForCurrentMonth]);
       }
 
-      // These are all the days in the current month.
       var daysInMonth = new Date(publicYearToDisplay(), publicMonthToDisplay() + 1, 0).getDate();
       for (i = 1; i <= daysInMonth; i++) {
           daysArray.push([i, cellColorForPreviousMonth]);
       }
 
-      // Depending on how many days we have so far (from previous month and current), we will need
-      // to get some days from next month. We can do this naively though, since all months start on
-      // the 1st.
       var daysRequiredFromNextMonth = 35 - daysArray.length;
 
       for (i = 1; i <= daysRequiredFromNextMonth; i++) {
@@ -117,27 +105,22 @@ $(document).ready( function (){
                   });
 
 function displayPreviousMonth() {
-  // We keep track of user's "back" and "forward" presses in this counter
   d3CalendarGlobals.decrementCounter();
   renderDaysOfMonth();
 }
 
 function displayNextMonth(){
-  // We keep track of user's "back" and "forward" presses in this counter
   d3CalendarGlobals.incrementCounter();
   renderDaysOfMonth();
 }
 
-// This function is responsible for rendering the days of the month in the grid.
+
 function renderDaysOfMonth(month, year) {
   $('#month-name').append($('#currentMonth').text(d3CalendarGlobals.monthToDisplayAsText() + ' ' + d3CalendarGlobals.yearToDisplay()));
-  // We get the days for the month we need to display based on the number of times the user has pressed
-  // the forward or backward button.
+
   var daysInMonthToDisplay = d3CalendarGlobals.daysInMonth();
   var cellPositions = d3CalendarGlobals.gridCellPositions;
 
-  // All text elements representing the dates in the month are grouped together in the "datesGroup" element by the initalizing
-  // function below. The initializing function is also responsible for drawing the rectangles that make up the grid.
   d3CalendarGlobals.datesGroup
    .selectAll("text")
    .data(daysInMonthToDisplay)
@@ -218,14 +201,19 @@ function drawGraphsForMonthlyData() {
 
 
 }
-// function projectData(){ need to access saved database here... should it be in a csv file, or read directly from the databae?  how the fuck?}
+
 // Generates some random data that can be used to draw pie charts.
 function getDataForMonth() {
-  var randomData = [];
-  for (var i = 0; i < 35; i++) {
-      randomData.push([1,1,1,1,2,1]);
+
+   randomData = [];
+  for (var i = 0; i < 17; i++) {
+    // length of for loop determined by the number of days @data.count
+    // need to offset for days with no data.  create 14 blank arrays? maybe .offset?
+      randomData.push([Math.floor(Math.random()*100),Math.floor(Math.random()*100),
+        Math.floor(Math.random()*100),Math.floor(Math.random()*100),Math.floor(Math.random()*100)]);
   }
   return randomData;
+  return data
 }
 
 // This is the initializing function. It adds an svg element, draws a set of rectangles to form the calendar grid,

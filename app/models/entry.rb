@@ -16,19 +16,11 @@ class Entry < ActiveRecord::Base
     # @colors.push(@silvers, @reds, @oranges, @yellows, @greens, @blues, @purples)
 
     previous_dates = []
-
     @user.entries.select(:date).uniq.each do |entry|
       previous_dates.push(entry.date)
     end
+    dates = previous_dates.sort!
 
-    previous_dates.sort
-
-    # need loop for previous days
-    # dates = previous_dates.last
-    dates = previous_dates.slice(0,6)
-    binding.pry
-
-    @data = []
     guide_line = [
     ['0%', '#808080'],
     ['15%', '#FF0000'],
@@ -38,31 +30,33 @@ class Entry < ActiveRecord::Base
     ['75%', '#0000FF'],
     ['90%', '#4B0082']]
 
+    @data = []
+    date_arr = []
+
+    # for date in dates
     dates.each do |date|
-      @user.entries.where(date:dates).each do |entry|
+      @user.entries.where(date:date).each do |entry|
         if entry.emotion_num =="0"
-          @data.push(guide_line[0])
+          date_arr.push(guide_line[0])
         elsif entry.emotion_num =="1"
-          @data.push(guide_line[1])
+          date_arr.push(guide_line[1])
         elsif entry.emotion_num =="2"
-          @data.push(guide_line[2])
+          date_arr.push(guide_line[2])
         elsif entry.emotion_num =="3"
-          @data.push(guide_line[3])
+          date_arr.push(guide_line[3])
         elsif entry.emotion_num =="4"
-          @data.push(guide_line[4])
+          date_arr.push(guide_line[4])
         elsif entry.emotion_num =="5"
-          @data.push(guide_line[5])
+          date_arr.push(guide_line[5])
         else entry.emotion_num =="6"
-          @data.push(guide_line[6])
+          date_arr.push(guide_line[6])
         end
       end
+      date_arr.sort!
+      @data.push(date_arr)
+      date_arr = []
+
     end
-
-    @data.sort!
-
-
-
-      return @data
+    return @data
   end
-
 end

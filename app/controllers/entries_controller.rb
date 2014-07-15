@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @entries = User.find(params[:user_id]).entries.order('created_at DESC').limit(6)
+    @entries = User.find(params[:user_id]).entries.order('created_at DESC').limit(9)
     @data = Entry.data_to_array(params)
   end
 
@@ -23,6 +23,12 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
+  end
+
+  def edit
+    @entry = Entry.find(params[:id])
+    Entry.update(entry_params)
+    Entry.save
   end
 
   private

@@ -14,7 +14,7 @@
 
 /* ------------------------------- */
 #nav{
-  background: #6699FF;
+  background: #C0C0C0;
   width: 100%;
   box-shadow: 2px 2px 10px #808080;
 }
@@ -58,6 +58,10 @@
   width: 100%;
 }
 
+/*.title a{
+  text-decoration: none;
+}*/
+
 .calendar-control{
   display: inline-block;
   float: left;
@@ -70,7 +74,7 @@
 
 .entry-display{
   width: 280px;
-  height: 300px;
+  height: 225px;
   box-shadow: 2px 2px 10px #808080;
   border-radius: 10px;
   overflow: auto;
@@ -102,4 +106,8 @@
 }
 .sad{
  background: rgba(0,0,255,0.5);
+}
+
+circle {
+  box-shadow: 4px 4px 20px #808080;
 }
