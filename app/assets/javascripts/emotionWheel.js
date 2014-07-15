@@ -1,5 +1,5 @@
 function projectData(){
-  var height = function(d, i){ return 400 };
+  var height = function(d, i){ return 120 };
   var width = 940;
 
   var svg = d3.select("#emotion-wheel").append("svg")

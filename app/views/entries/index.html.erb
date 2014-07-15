@@ -7,21 +7,8 @@
 
 <div class="container">
 
-  <div class="clearfix">
-    <% @entries.each do |entry| %>
-      <div class="entry-display <%= entry.emotion.downcase %>">
-        <ul>
-          <li><strong>Date</strong>: <%= entry.date %></li>
-          <li><strong>Event</strong>: <%= entry.event %></li>
-          <li><strong>Feeling</strong>: <%= entry.emotion %></li>
-          <li><strong>Temperature</strong>: <%= entry.weather %></li>
-          <li><strong>Conditions</strong>: <%= entry.weather_img %></li>
-          <li><strong>Description</strong>: <%= entry.description %></li>
-        </ul>
-      </div>
-    <% end %>
-  </div>
   <div id="emotion-wheel">
+    <h3>Emotional gradient over the last <%= @data.count %> days...</h3>
     <svg width="0" height="0">
       <g>
         <defs>
@@ -44,7 +31,26 @@
       </g>
     </svg>
   </div>
-  <div id="calendar-control">
+
+  <div class="clearfix">
+    <h3> Nine most recent Entries:</h3>
+    <% @entries.each do |entry| %>
+      <a href="/users/<%= @user.id %>/entries/<%= entry.id %>">
+        <div class="entry-display <%= entry.emotion.downcase %>">
+          <ul>
+            <li><strong>Date</strong>: <%= entry.date %></li>
+            <li><strong>Event</strong>: <%= entry.event %></li>
+            <li><strong>Feeling</strong>: <%= entry.emotion %></li>
+            <li><strong>Temperature</strong>: <%= entry.weather %></li>
+            <li><strong>Conditions</strong>: <%= entry.weather_img %></li>
+            <li><strong>Description</strong>: <%= entry.description %></li>
+          </ul>
+        </div>
+      </a>
+    <% end %>
+  </div>
+
+<!--   <div id="calendar-control">
     <%= button_to "New Entry", new_user_entry_path, :class => "button", :method => :get  %>
     <button id="back" class="calendar-control" name="back"> < </button>
     <div id='month-name'class="calendar-control"></div>
@@ -53,5 +59,5 @@
   </div>
 
   <div id="chart"></div>
-
+ -->
 </div>

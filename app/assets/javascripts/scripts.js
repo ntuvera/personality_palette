@@ -7,3 +7,7 @@ function grabEntries(){
     }
   })
 }
+
+
+setTimeout(function(){
+  $('#emotion-wheel').fadeIn('slow')}, 5000);

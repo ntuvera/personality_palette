@@ -8,6 +8,7 @@
     </div>
     <div class="sixteen columns form-box">
       <form id="entry-log" action="/users/<%= @user.id %>/entries" method="post">
+        <input type='hidden' name='_method' value='put'>
         <%= token_tag %>
           <input type='hidden' name="entry[date]" data-name="date">
           <input type='hidden' name="entry[longitude]" data-name="lon">
@@ -15,11 +16,11 @@
           <input type='hidden' name="entry[user_id]" value="<%= @user.id%>">
           <input type='hidden' name="entry[emotion_num]" id="emo_num">
           Event:<input type="text" name="entry[event]">
-          Emotion:<input id="color-to-emotion" type="text" name="entry[emotion]">
-          Temperature(F): <input type="text" name="entry[weather]" data-name="weather">
-          Weather Condition: <input type="text" name="entry[weather_img]" data-name="weather_con">
+          <input id="color-to-emotion" type="hidden" name="entry[emotion]">
+          <input type="hidden" name="entry[weather]" data-name="weather">
+          <input type="hidden" name="entry[weather_img]" data-name="weather_con">
           Description:<textarea name="entry[description]" rows="5" cols="50" form="entry-log"></textarea>
-          <input type="submit" value="Add Entry">
+          <input type="submit" value="Edit Entry">
       </form>
 
     </div>
