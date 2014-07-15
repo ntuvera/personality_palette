@@ -5,13 +5,15 @@ function projectData(){
   var svg = d3.select("#emotion-wheel").append("svg")
                 .attr('height', height)
                 .attr('width', width)
+                .attr("class", "sixteen columns")
                 .append('g')
                 // .attr('transform', 'translate(30, 30)');
   var circles = svg.selectAll("circle")
                     .data(data)
                     .enter()
                     .append("circle")
-                      .attr("r", 45)
+
+                      .attr("r", 60)
                       .attr("cx", function(d, i){ return (i* (960/data.length)) + 60})
                       .attr("cy", function(d, i){ return 60 })
                       .attr("fill", function(d, i){ return "url(#myGradient"+i+")" })

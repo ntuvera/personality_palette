@@ -1,12 +1,20 @@
 <div class="container">
 
     <div class="two-third column color-box">
+      <h3>How are you feeling?</h3>
+      <p>Please choose a color from the wheel</p>
     </div>
     <div class="one-third column weather-box">
       <div style="height: 300px;" id="weather-info">
+        <h3>Today's conditions</h3>
+        <p> weather and location will be added automatically</p>
+          longitude:<input type='text' name="entry[longitude]" data-name="lon">
+          latitude:<input type='text' name="entry[latitude]" data-name="lat">
       </div>
     </div>
-    <div class="sixteen columns form-box">
+    <div class="ten columns offset-by-six form-box">
+      <h3>Write a little something...</h3>
+      <p>please fill in the missing pieces...</p>
       <form id="entry-log" action="/users/<%= @user.id %>/entries" method="post">
         <%= token_tag %>
           <input type='hidden' name="entry[date]" data-name="date">
@@ -14,10 +22,10 @@
           <input type='hidden' name="entry[latitude]" data-name="lat">
           <input type='hidden' name="entry[user_id]" value="<%= @user.id%>">
           <input type='hidden' name="entry[emotion_num]" id="emo_num">
+          <input type="hidden" name="entry[weather]" data-name="weather">
+          <input type="hidden" name="entry[weather_img]" data-name="weather_con">
           Event:<input type="text" name="entry[event]">
           Emotion:<input id="color-to-emotion" type="text" name="entry[emotion]">
-          Temperature(F): <input type="text" name="entry[weather]" data-name="weather">
-          Weather Condition: <input type="text" name="entry[weather_img]" data-name="weather_con">
           Description:<textarea name="entry[description]" rows="5" cols="50" form="entry-log"></textarea>
           <input type="submit" value="Add Entry">
       </form>

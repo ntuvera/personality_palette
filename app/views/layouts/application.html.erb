@@ -17,6 +17,9 @@
         </h2>
         <ul class="six columns">
         <% if current_user %>
+          <li><%= link_to "Home", :user_entries, method: :get %></li>
+          <li><%= link_to "New Entry", :new_user_entry, method: :get %></li>
+          <li><%= link_to "View All", :user_entries, method: :get %></li>
           <li><%= link_to "Logout", :logout, method: :post %></li>
         <% else %>
             <li><%= link_to "Register", new_user_path %></li>

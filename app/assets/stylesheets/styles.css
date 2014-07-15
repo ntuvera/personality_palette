@@ -108,6 +108,10 @@
  background: rgba(0,0,255,0.5);
 }
 
-circle {
-  box-shadow: 4px 4px 20px #808080;
+.color-box {
+  text-align:center;
+}
+
+.form-box textarea input{
+  display:inline-block;
 }

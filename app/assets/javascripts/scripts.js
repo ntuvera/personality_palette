@@ -9,5 +9,5 @@ function grabEntries(){
 }
 
 
-setTimeout(function(){
-  $('#emotion-wheel').fadeIn('slow')}, 5000);
+// setTimeout(function(){
+//   $('#emotion-wheel').fadeIn('slow')}, 5000);

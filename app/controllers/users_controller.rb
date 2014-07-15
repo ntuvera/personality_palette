@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    binding.pry
     redirect_to user_entries_path(@user.id)
   end
 
@@ -61,7 +60,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      binding.pry
       params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end
