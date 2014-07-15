@@ -1,3 +1,4 @@
+
 <div class="container">
 
     <div class="two-third column color-box">
@@ -15,7 +16,7 @@
     <div class="ten columns offset-by-six form-box">
       <h3>Write a little something...</h3>
       <p>please fill in the missing pieces...</p>
-      <form id="entry-log" action="/users/<%= @user.id %>/entries" method="post">
+      <form name="new-entry" id="entry-log" action="/users/<%= @user.id %>/entries" onsubmit="return validateForm()" method="post">
         <%= token_tag %>
           <input type='hidden' name="entry[date]" data-name="date">
           <input type='hidden' name="entry[longitude]" data-name="lon">
