@@ -41,6 +41,7 @@ table td{
   padding: 10px;
   display: block;
   background: #EBF4FA;
+  box-shadow: 2px 2px 10px #808080;
 }
 .nav-bar ul{
   float:right;
@@ -86,11 +87,16 @@ table td{
   box-shadow: 2px 2px 10px #808080;
   border-radius: 10px;
   overflow: auto;
-  display:inline-block;
+  display: inline-block;
   padding: 10px;
   background-image: url();
   float: left;
   margin: 10px;
+}
+div .single-entry{
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .neutral{
