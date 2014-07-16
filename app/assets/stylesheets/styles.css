@@ -14,10 +14,10 @@ table tr{
 table td{
   padding:0px 10px 0px 10px;
 }
-/*#emotion-wheel-gradients{
+#emotion-wheel-gradients{
   float:left;
   overflow:auto;
-}*/
+}
 #nav{
   background: #C0C0C0;
   width: 100%;
@@ -66,8 +66,9 @@ table td{
 }
 
 #weather-info{
-  height:300px;
-  width:300px;
+  height: 300px;
+  width: 300px;
+  margin: 10px;
 }
 .calendar-control{
   display: inline-block;
