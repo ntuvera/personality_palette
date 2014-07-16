@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="entry-display <%= @entry.emotion.downcase %>">
     <ul>
       <li>Event: <%= @entry.event %></li>
@@ -9,6 +10,11 @@
       <li>Temperature: <%= @entry.weather %></li>
       <li>Conditions: <%= @entry.weather_img %></li>
       <li>Description: <%= @entry.description %></li>
+      <form action="/users/<%= @user.id %>/entries/<%= @entry.id %>" method="post">
+        <input type='hidden' name="_method" value="delete">
+        <%= token_tag %>
+        <input type='submit' value='Delete Entry'>
+      </form>
     </ul>
   </div>
 </div>

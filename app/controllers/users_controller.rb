@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    redirect_to user_entries_path(@user.id)
+    @entries = User.find(params[:id]).entries.all
+    @user = User.find(params[:id])
   end
 
   def new

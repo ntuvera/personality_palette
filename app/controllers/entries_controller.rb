@@ -23,6 +23,7 @@ class EntriesController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @entry = Entry.find(params[:id])
   end
 
@@ -37,6 +38,11 @@ class EntriesController < ApplicationController
     redirect_to "/users/#{user.id}/entries"
   end
 
+  def destroy
+    @entry = User.find(params[:user_id]).entries.find(params[:id])
+    @entry.delete
+    redirect_to user_entries_path
+  end
   private
   def entry_params
     params.require(:entry).permit(:user_id, :date, :event, :emotion, :emotion_num, :longitude, :latitude, :weather, :weather_img, :description)

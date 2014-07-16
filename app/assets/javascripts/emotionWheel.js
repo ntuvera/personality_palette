@@ -7,12 +7,10 @@ function projectData(){
                 .attr('width', width)
                 .attr("class", "sixteen columns")
                 .append('g')
-                // .attr('transform', 'translate(30, 30)');
   var circles = svg.selectAll("circle")
                     .data(data)
                     .enter()
                     .append("circle")
-
                       .attr("r", 75)
                       .attr("cx", function(d, i){ return (i* (960/data.length)) + 80})
                       .attr("cy", function(d, i){ return 80 })

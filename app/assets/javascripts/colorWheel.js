@@ -74,11 +74,11 @@ window.onload=function(){
               var pickedEmotion = "Angry";
               var pickedEmotionNo = 1
             }
-            else if (self.pickedColor == "#FFA500"){
+            else if (self.pickedColor == "#FFFF00"){
               var pickedEmotion = "Afraid";
               var pickedEmotionNo = 2
             }
-            else if (self.pickedColor == "#FFFF00"){
+            else if (self.pickedColor == "#FFA500"){
               var pickedEmotion = "Surprised";
               var pickedEmotionNo = 3
             }
