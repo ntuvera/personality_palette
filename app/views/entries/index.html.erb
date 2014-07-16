@@ -1,11 +1,16 @@
-<!-- script tag to pass variables from controller to javascript-->
+<!-- script tag to pass variables from controller to javascript can substitute with $.ajax-->
 <%= javascript_tag "var entries = #{@entries.to_json};
                     var data = #{@data};  " %>
 
+<script>
+  setTimeout(function(){
+    projectData();
+    updateAll(data);
+  }, 2000);
+</script>
 
 
-
-<div class="container">
+<div class="container fadeable">
 <div class="sixteen columns">
   <div id="emotion-wheel">
     <div id="color-key">

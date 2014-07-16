@@ -35,13 +35,11 @@ window.onload=function(){
         .attr("fill", function (d, i) {
           return color(i);
         })
-        //.attr("stroke", "#fff")
-        //.attr("stroke-width", 4)
         .attr("d", arc)
         .on("mouseover", function () {
           var fill = d3.select(this).attr("fill");
           self.pickedColor = fill;
-          plate.attr("fill", self.pickedColor)  // see if duration/transformation is possible here
+          plate.attr("fill", self.pickedColor)
         })
         .on("click", function() {
           wheel.transition()
@@ -53,14 +51,12 @@ window.onload=function(){
 
     var plate = svg.append("rect")
         .attr("fill", defaultColor)
-        //.attr("r", 75)
         .attr("x", -75)
         .attr("y", -75)
         .attr("height", 150)
         .attr("width", 150)
         .attr("rx",100)
         .attr("ry",100)
-        // .attr("stroke","black")
         .on("mouseover", function() {
             wheel.transition()
             .ease("elastic")
@@ -68,7 +64,7 @@ window.onload=function(){
             .attr("d", newarc);
           })
           .on("click", function() {
-            // var emotions = ["Angry", "Afraid", "Surprised", "Happy", "Sad", "Disgusted"]
+            // var emotions = ["Angry", "Afraid", "Surprised", "Happy", "Sad", "Disgusted"] for reference
 
             if (self.pickedColor == "#FF0000"){
               var pickedEmotion = "Angry";
@@ -96,12 +92,9 @@ window.onload=function(){
             }
             else{
               var pickedEmotion = "Neutral";
-              var pickedEmotionNo = 0  // add validation for choosing an emotion
+              var pickedEmotionNo = 0
             }
             $('#plate').remove()
-            // $('.color-box').append($('<div>').attr('id','plate'));
-            // $('#plate').text("");
-            // $('#plate').text(pickedEmotion);
             $("#color-to-emotion").val(pickedEmotion);
             $('#emo_num').val(pickedEmotionNo);
 

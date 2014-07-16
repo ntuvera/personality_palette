@@ -1,6 +1,3 @@
-
-// http://api.wunderground.com/api/09e2c9e3b58bf74d/geolookup/q/37.776289,-122.395234.json
-
   var lat;
   var lon;
 

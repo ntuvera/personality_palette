@@ -73,6 +73,6 @@ class Entry < ActiveRecord::Base
     ['Surprised', 'rgba(255,255,0,0.8)'],
     ['Happy', 'rgba(0,255,0,0.8)'],
     ['Sad', 'rgba(0,0,255,0.6)'],
-    ['Disgusted', 'rgba(75,0,150,0.8)']]
+    ['Disgusted', 'rgba(75,0,150,0.7)']]
   end
 end

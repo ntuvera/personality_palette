@@ -5,9 +5,9 @@ function projectData(){
   var svg = d3.select("#emotion-wheel").append("svg")
                 .attr('height', height)
                 .attr('width', width)
-                .attr("class", "sixteen columns")
+                .attr("class", "sixteen columns fadeable")
                 .attr("id", "emotion-wheel-gradients")
-                .append('g')
+                .append('g');
   var circles = svg.selectAll("circle")
                     .data(data)
                     .enter()
@@ -15,7 +15,7 @@ function projectData(){
                       .attr("r", 75)
                       .attr("cx", function(d, i){ return (i* (800/data.length)) + 80})
                       .attr("cy", function(d, i){ return 80 })
-                      .attr("fill", function(d, i){ return "url(#myGradient"+i+")" })
+                      .attr("fill", function(d, i){ return "url(#myGradient"+i+")" });
 }
 
 function updateStops(data) {
@@ -36,7 +36,3 @@ function updateAll(data) {
     updateStops(data);
 }
 
-setTimeout(function(){
-  projectData();
-  updateAll(data);
-}, 2000);

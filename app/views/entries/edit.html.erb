@@ -1,12 +1,12 @@
 <div class="container">
 
-    <div class="two-third column color-box">
+    <div class="two-third column color-box fadeable">
     </div>
-    <div class="one-third column weather-box">
+    <div class="one-third column weather-box fadeable">
       <div style="height: 300px;" id="weather-info">
       </div>
     </div>
-    <div class="sixteen columns form-box">
+    <div class="sixteen columns form-box fadeable">
       <form id="entry-log" action="/users/<%= @user.id %>/entries" method="post">
         <input type='hidden' name='_method' value='put'>
         <%= token_tag %>

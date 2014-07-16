@@ -116,9 +116,12 @@ table td{
 }
 
 .color-box {
-  text-align:center;
+  text-align: center;
 }
-
+.center {
+  text-align: center;
+  width: 100%;
+}
 .form-box textarea input{
-  display:inline-block;
+  display: inline-block;
 }
