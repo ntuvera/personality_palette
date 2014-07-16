@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @entries = User.find(params[:user_id]).entries.order('created_at DESC').limit(9)
+    @entries = User.find(params[:user_id]).entries.order('created_at DESC').limit(6)
     @data = Entry.data_to_array(params)
     @color_key = Entry.color_key
     respond_to do |f|

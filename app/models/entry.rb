@@ -21,7 +21,7 @@ class Entry < ActiveRecord::Base
     # @colors.push(@silvers, @reds, @oranges, @yellows, @greens, @blues, @purples)
 
     previous_dates = []
-    @user.entries.select(:date).uniq.each do |entry|
+    @user.entries.select(:date).uniq.limit(7).each do |entry|
       previous_dates.push(entry.date)
     end
 

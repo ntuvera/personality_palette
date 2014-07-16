@@ -2,7 +2,7 @@ function projectData(){
   var height = 200;
   var width = 940;
 
-  var svg = d3.select("#emotion-wheel").append("svg")
+  var svg = d3.select("svg")
                 .attr('height', height)
                 .attr('width', width)
                 .attr("class", "sixteen columns fadeable")

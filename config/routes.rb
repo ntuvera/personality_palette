@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'user_sessions#new'
+  root 'user_sessions#new'
   resources :user_sessions
   resources :users do
     resources :entries
