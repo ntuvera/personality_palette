@@ -3,16 +3,11 @@
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
  }
 
-#weather-info{
-  height:300px;
-  width:300px;
-}
-
-#plate {
-  z-index:1;
-}
-
 /* ------------------------------- */
+
+h3{
+  font-family: 'Hind', sans-serif;
+}
 #nav{
   background: #C0C0C0;
   width: 100%;
@@ -20,7 +15,7 @@
 }
 #nav h2{
   color: #FFFFFF;
-  font-family: Arial, sans-serif;
+  font-family: 'Hind', sans-serif;
 }
 #nav ul{
   margin: 0;
@@ -58,10 +53,10 @@
   width: 100%;
 }
 
-/*.title a{
-  text-decoration: none;
-}*/
-
+#weather-info{
+  height:300px;
+  width:300px;
+}
 .calendar-control{
   display: inline-block;
   float: left;
