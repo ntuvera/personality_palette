@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:index, :new, :create]
 
   def index
-    @user = current_user
-    @users = User.all
+    redirect_to login_path
   end
 
   def show
@@ -23,7 +22,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to :users, notice: 'User was successfully created.' }
+        format.html { redirect_to :login, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

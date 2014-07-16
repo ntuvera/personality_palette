@@ -8,6 +8,7 @@ class EntriesController < ApplicationController
 
 
   def show
+    @entry = Entry.find(params[:id])
     redirect_to entries_user_path(@user.id)
   end
 

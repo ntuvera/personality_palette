@@ -1,5 +1,11 @@
 class Entry < ActiveRecord::Base
   belongs_to :user
+
+  validates :event, presence: true
+  validates :emotion, presence: true
+  validates :description, presence: true
+
+
   def self.data_to_array(params)
     @colors = []
     @user = User.find(params[:user_id])

@@ -1,51 +1,15 @@
-<!-- script tag to pass variables from controller to javascript-->
-<%= javascript_tag "var entries = #{@entries.to_json};
-                    var data = #{@data};  " %>
-
-
-
-
 <div class="container">
-
-  <div id="emotion-wheel">
-    <h3>Emotional gradient over the last <%= @data.count %> days...</h3>
-    <svg width="0" height="0">
-      <g>
-        <defs>
-          <linearGradient id="myGradient0">
-          </linearGradient>
-          <linearGradient id="myGradient1">
-          </linearGradient>
-          <linearGradient id="myGradient2">
-          </linearGradient>
-          <linearGradient id="myGradient3">
-          </linearGradient>
-          <linearGradient id="myGradient4">
-          </linearGradient>
-          <linearGradient id="myGradient5">
-          </linearGradient>
-          <linearGradient id="myGradient6">
-          </linearGradient>
-        </defs>
-      </g>
-    </svg>
-  </div>
-
-  <div class="clearfix">
-    <h3> Nine most recent Entries:</h3>
-    <% @entries.each do |entry| %>
-      <a href="/users/<%= @user.id %>/entries/<%= entry.id %>">
-        <div class="entry-display <%= entry.emotion.downcase %>">
-          <ul>
-            <li><strong>Date</strong>: <%= entry.date %></li>
-            <li><strong>Event</strong>: <%= entry.event %></li>
-            <li><strong>Feeling</strong>: <%= entry.emotion %></li>
-            <li><strong>Temperature</strong>: <%= entry.weather %></li>
-            <li><strong>Conditions</strong>: <%= entry.weather_img %></li>
-            <li><strong>Description</strong>: <%= entry.description %></li>
-          </ul>
-        </div>
-      </a>
-    <% end %>
+  <div class="entry-display <%= @entry.emotion.downcase %>">
+    <ul>
+      <li>Event: <%= @entry.event %></li>
+      <li>When: <%= @entry.date %></li>
+      <li>Feeling: <%= @entry.emotion %></li>
+      <li>Longitude: <%= @entry.longitude %></li>
+      <li>Latitude: <%= @entry.latitude %></li>
+      <li>Temperature: <%= @entry.weather %></li>
+      <li>Conditions: <%= @entry.weather_img %></li>
+      <li>Description: <%= @entry.description %></li>
+    </ul>
   </div>
 </div>
+

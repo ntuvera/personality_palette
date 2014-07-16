@@ -1,5 +1,5 @@
 function projectData(){
-  var height = function(d, i){ return 120 };
+  var height = function(d, i){ return 200 };
   var width = 940;
 
   var svg = d3.select("#emotion-wheel").append("svg")
@@ -13,9 +13,9 @@ function projectData(){
                     .enter()
                     .append("circle")
 
-                      .attr("r", 60)
-                      .attr("cx", function(d, i){ return (i* (960/data.length)) + 60})
-                      .attr("cy", function(d, i){ return 60 })
+                      .attr("r", 75)
+                      .attr("cx", function(d, i){ return (i* (960/data.length)) + 80})
+                      .attr("cy", function(d, i){ return 80 })
                       .attr("fill", function(d, i){ return "url(#myGradient"+i+")" })
 }
 
