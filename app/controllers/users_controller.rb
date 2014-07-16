@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show
     @entries = User.find(params[:id]).entries.all
     @user = User.find(params[:id])
+    redirect_to user_entries_path(current_user)
   end
 
   def new
