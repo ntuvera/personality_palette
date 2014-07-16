@@ -4,7 +4,6 @@
 
   <title>PersonalityPalette</title>
   <link href='http://fonts.googleapis.com/css?family=Hind:400,300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="stylesheets/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,15 +14,15 @@
   <div id="nav">
     <div class="container">
 
-        <h2 class="ten columns">
+        <h2 class="six columns">
           <i>Personality Palette</i>
         </h2>
         <ul class="six columns nav-bar">
         <% if current_user %>
-          <li><%= link_to content_tag(:i,nil, :class=>"fa fa-home fa-3x", :alt=>"home"), user_path(current_user), method: :get %></li>
-          <li><%= link_to content_tag(:i,nil, :class=>"fa fa-pencil fa-3x", :alt=>"new entry"), new_user_entry_path(current_user), method: :get %></li>
-          <li><%= link_to content_tag(:i,nil, :class=>"fa fa-th-list fa-3x", :alt=>"view entries"), user_entries_path(current_user), method: :get %></li>
-          <li><%= link_to content_tag(:i,nil, :class=>"fa fa-sign-out fa-3x", :alt=>"log out"), logout_path, method: :post %></li>
+          <li><%= link_to "Home", user_path(current_user), method: :get %></li>
+          <li><%= link_to "New Entry", new_user_entry_path(current_user), method: :get %></li>
+          <li><%= link_to "View All", user_entries_path(current_user), method: :get %></li>
+          <li><%= link_to "Logout", logout_path, method: :post %></li>
         <% else %>
             <li><%= link_to "Register", new_user_path %></li>
             <li><%= link_to "Login", :login %></li>
