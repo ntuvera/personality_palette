@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require styles
+ *= require font-awesome
  *= require layout
  *= require skeleton
  *= require base

@@ -50,6 +50,6 @@ gem 'rspec-rails'
 
 # Production gems
 gem 'rails_12factor', group: :production
-gem 'font-awesome-less'
+gem 'font-awesome-rails'
 
 gem 'heroku'
