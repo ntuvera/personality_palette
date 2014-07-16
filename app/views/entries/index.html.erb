@@ -8,27 +8,42 @@
 <div class="container">
 <div class="sixteen columns">
   <div id="emotion-wheel">
-      <h3>Emotional gradient over the last <%= @data.count %> days...</h3>
-      <svg width="0" height="0">
-        <g>
-          <defs>
-            <linearGradient id="myGradient0">
-            </linearGradient>
-            <linearGradient id="myGradient1">
-            </linearGradient>
-            <linearGradient id="myGradient2">
-            </linearGradient>
-            <linearGradient id="myGradient3">
-            </linearGradient>
-            <linearGradient id="myGradient4">
-            </linearGradient>
-            <linearGradient id="myGradient5">
-            </linearGradient>
-            <linearGradient id="myGradient6">
-            </linearGradient>
-          </defs>
-        </g>
-      </svg>
+    <div id="color-key">
+      <table>
+        <tbody>
+          <td> Emotion: </td>
+          <% @color_key.each do |key| %>
+          <tr>
+            <td style="background: <%= key[1] %>">
+              <%= key[0] %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <hr/>
+    <h3>Emotional gradient over the last <%= @data.count %> entries...</h3>
+    <svg width="0" height="0">
+      <g>
+        <defs>
+          <linearGradient id="myGradient0">
+          </linearGradient>
+          <linearGradient id="myGradient1">
+          </linearGradient>
+          <linearGradient id="myGradient2">
+          </linearGradient>
+          <linearGradient id="myGradient3">
+          </linearGradient>
+          <linearGradient id="myGradient4">
+          </linearGradient>
+          <linearGradient id="myGradient5">
+          </linearGradient>
+          <linearGradient id="myGradient6">
+          </linearGradient>
+        </defs>
+      </g>
+    </svg>
     </div>
   </div>
   <div class="clearfix">

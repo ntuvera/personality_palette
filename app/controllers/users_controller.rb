@@ -3,13 +3,13 @@ class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:index, :new, :create]
 
   def index
-    redirect_to login_path
+
   end
 
   def show
     @entries = User.find(params[:id]).entries.all
     @user = User.find(params[:id])
-    redirect_to user_entries_path(current_user)
+    redirect_to users_path
   end
 
   def new

@@ -22,10 +22,10 @@ window.onload=function(){
 
       var svg = d3.select(".color-box")
         .append("svg")
-        .attr("width", 500)
+        .attr("width", 300)
         .attr("height", 310)
         .append("g")
-        .attr("transform", "translate(250,150)");
+        .attr("transform", "translate(150,150)");
 
       var wheel = svg.datum([1, 1, 1, 1, 1, 1])
         .selectAll("path")
@@ -74,11 +74,11 @@ window.onload=function(){
               var pickedEmotion = "Angry";
               var pickedEmotionNo = 1
             }
-            else if (self.pickedColor == "#FFFF00"){
+            else if (self.pickedColor == "#FFA500"){
               var pickedEmotion = "Afraid";
               var pickedEmotionNo = 2
             }
-            else if (self.pickedColor == "#FFA500"){
+            else if (self.pickedColor == "#FFFF00"){
               var pickedEmotion = "Surprised";
               var pickedEmotionNo = 3
             }

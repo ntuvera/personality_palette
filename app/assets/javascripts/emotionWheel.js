@@ -1,18 +1,19 @@
 function projectData(){
-  var height = function(d, i){ return 200 };
+  var height = 200;
   var width = 940;
 
   var svg = d3.select("#emotion-wheel").append("svg")
                 .attr('height', height)
                 .attr('width', width)
                 .attr("class", "sixteen columns")
+                .attr("id", "emotion-wheel-gradients")
                 .append('g')
   var circles = svg.selectAll("circle")
                     .data(data)
                     .enter()
                     .append("circle")
                       .attr("r", 75)
-                      .attr("cx", function(d, i){ return (i* (960/data.length)) + 80})
+                      .attr("cx", function(d, i){ return (i* (800/data.length)) + 80})
                       .attr("cy", function(d, i){ return 80 })
                       .attr("fill", function(d, i){ return "url(#myGradient"+i+")" })
 }

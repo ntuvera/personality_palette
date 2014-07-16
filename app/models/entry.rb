@@ -10,7 +10,7 @@ class Entry < ActiveRecord::Base
     @colors = []
     @user = User.find(params[:user_id])
 
-    # logs total number of hits for an emotion... incorporate into table for full data report?
+    # logs total number of hits for an emotion... saved for future feature
     # @silvers = @user.entries.where(emotion_num:"0").count('date', :distinct => true)
     # @reds = @user.entries.where(emotion_num:"1").count('date', :distinct => true)
     # @oranges = @user.entries.where(emotion_num:"2").count('date', :distinct => true)
@@ -30,8 +30,8 @@ class Entry < ActiveRecord::Base
     guide_line = [
     ['0%', '#808080'],
     ['15%', '#FF0000'],
-    ['30%', '#FFFF00'],
-    ['45%', '#FFA500'],
+    ['30%', '#FFA500'],
+    ['45%', '#FFFF00'],
     ['60%', '#00FF00'],
     ['75%', '#0000FF'],
     ['90%', '#4B0082']]
@@ -61,8 +61,18 @@ class Entry < ActiveRecord::Base
       date_arr.sort!
       @data.push(date_arr)
       date_arr = []
-
     end
     return @data
+  end
+
+  def self.color_key
+    color_guide_line = [
+    ['Neutral', 'rgba(0,0,0,0.2)'],
+    ['Angry', 'rgba(255,0,0,0.8)'],
+    ['Afraid', 'rgba(255,201,0,0.8)'],
+    ['Surprised', 'rgba(255,255,0,0.8)'],
+    ['Happy', 'rgba(0,255,0,0.8)'],
+    ['Sad', 'rgba(0,0,255,0.6)'],
+    ['Disgusted', 'rgba(75,0,150,0.8)']]
   end
 end

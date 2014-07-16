@@ -5,9 +5,19 @@
 
 /* ------------------------------- */
 
-h3{
+h4, h3, h2{
   font-family: 'Hind', sans-serif;
 }
+table tr{
+  display:inline-block;
+}
+table td{
+  padding:0px 10px 0px 10px;
+}
+/*#emotion-wheel-gradients{
+  float:left;
+  overflow:auto;
+}*/
 #nav{
   background: #C0C0C0;
   width: 100%;
@@ -32,7 +42,9 @@ h3{
   display: block;
   background: #EBF4FA;
 }
-
+.nav-bar ul{
+  float:right;
+}
 #flash{
   width: 100%;
   padding: 5px;
@@ -90,10 +102,10 @@ h3{
   background: rgba(255,0,0,0.5);
 }
 .afraid{
-  background: rgba(255,255,0,0.5);
+  background: rgba(255,201,0,0.5);
 }
 .surprised{
-  background: rgba(255,102,0,0.5);
+  background: rgba(255,255,0,0.5);
 }
 .disgusted{
   background: rgba(75,0,150,0.75);

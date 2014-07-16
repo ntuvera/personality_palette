@@ -4,6 +4,7 @@ class EntriesController < ApplicationController
     @user = User.find(params[:user_id])
     @entries = User.find(params[:user_id]).entries.order('created_at DESC').limit(9)
     @data = Entry.data_to_array(params)
+    @color_key = Entry.color_key
   end
 
 

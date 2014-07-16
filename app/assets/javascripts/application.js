@@ -15,7 +15,6 @@
 //= require d3
 //= require turbolinks
 //= require colorWheel
-//= require geolocation
 //= require weather
 //= require emotionWheel
 //= require_tree .

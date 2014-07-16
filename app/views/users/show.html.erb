@@ -1,5 +1,12 @@
-<!-- script tag to pass variables from controller to javascript-->
-<%= javascript_tag "var entries = #{@entries.to_json};" %>
-<div class="container">
 
+<div class="container">
+  <div class="sixteen columns">
+
+    <blockquote>sometimes a picture is worth a thousand words...</blockquote>
+    <h2>Personality Palette...</h2>
+    <p> is a simple journal-based system that maps felt emotions between entries. Currently, it supports your current emotion palette over the last week, but future implementation will allow you to view up to the last 30 to 90 days.   </p>
+
+    <h3>To get started...</h3>
+    <p> click the new Entry button.  You can then select a color to represent link an emotion to the post, and fill in some details about how you're feeling.  You must log an event, emotion and a small description; the location and weather conditions will also be logged for future data visualization.</p>
+  </div>
 </div>

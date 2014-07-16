@@ -1,7 +1,7 @@
 
 <div class="container">
 
-    <div class="two-third column color-box">
+    <div class="one-third column color-box">
       <h3>How are you feeling?</h3>
       <p>Please choose a color from the wheel</p>
     </div>
@@ -13,7 +13,7 @@
           latitude:<input type='text' name="entry[latitude]" data-name="lat">
       </div>
     </div>
-    <div class="ten columns offset-by-six form-box">
+    <div class="one-third column form-box">
       <h3>Write a little something...</h3>
       <p>please fill in the missing pieces...</p>
       <form name="new-entry" id="entry-log" action="/users/<%= @user.id %>/entries" onsubmit="return validateForm()" method="post">
