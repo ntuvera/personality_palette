@@ -18,6 +18,17 @@ Technologies used:
 *	Google geolocation API
 *	underground Weather API
 
+Future iterations will include
+
+*	entries mapped to locations
+*	proportional gradients to quanities of mood ticks
+*	single page backbone.js routing
+*	calendar with emotional gradients for overall reference
+
+
+
+
+
 ---------
 project hosted at [http://personality-palette.herokuapp.com](http://personality-palette.herokuapp.com/)
 
