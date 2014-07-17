@@ -141,4 +141,6 @@ input#color-to-emotion{
   width: 50px;
   margin-top: 5px;
   vertical-align: middle;
+  display: inline-block;
+  float: right;
 }
