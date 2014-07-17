@@ -2,6 +2,11 @@ class Entry < ActiveRecord::Base
   belongs_to :user
 
   validates :event, presence: true
+  validates :date, presence: true
+  validates :longitude, presence: true
+  validates :latitude, presence: true
+  validates :weather, presence: true
+  validates :weather_img, presence: true
   validates :emotion, presence: true
   validates :description, presence: true
 
