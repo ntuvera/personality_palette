@@ -1,11 +1,11 @@
 function projectData(){
   var height = 200;
-  var width = 940;
+  var width = 960;
 
   var svg = d3.select("svg")
                 .attr('height', height)
                 .attr('width', width)
-                .attr("class", "sixteen columns fadeable")
+                .attr("class", "fadeable x-scrollable")
                 .attr("id", "emotion-wheel-gradients")
                 .append('g');
   var circles = svg.selectAll("circle")

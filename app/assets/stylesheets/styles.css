@@ -15,7 +15,7 @@ table td{
   padding:0px 10px 0px 10px;
 }
 #emotion-wheel-gradients{
-  float:left;
+  /*float:left;*/
   overflow:auto;
 }
 #nav{
@@ -28,9 +28,9 @@ table td{
   font-family: 'Hind', sans-serif;
 }
 #nav ul{
-  margin: 0;
+  margin: 0px;
   margin-top: 5px;
-  padding: 0;
+  padding: 0px;
   text-align: right;
 }
 #nav li{
@@ -39,7 +39,7 @@ table td{
 }
 #nav ul a{
   text-decoration: none;
-  padding: 10px;
+  padding: 5px;
   display: block;
   background: #EBF4FA;
   box-shadow: 2px 2px 10px #808080;
@@ -123,7 +123,12 @@ div .single-entry{
 .sad{
  background: rgba(0,0,255,0.5);
 }
-
+.x-scrollable{
+  overflow-x: auto;
+}
+.svg-container{
+  width: 100%;
+}
 .color-box {
   text-align: center;
 }

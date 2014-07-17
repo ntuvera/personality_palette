@@ -11,44 +11,47 @@
 
 
 <div class="container fadeable">
-<div class="sixteen columns">
-  <div id="emotion-wheel">
-    <hr/>
-    <h3>Emotional gradient over the last <%= @data.count %> days...</h3>
-    <div id="color-key">
-      <table>
-        <tbody>
-          <td> Emotion-color Key: </td>
-          <% @color_key.each do |key| %>
-          <tr>
-            <td style="background: <%= key[1] %>">
-              <%= key[0] %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <svg>
-      <g>
-        <defs>
-          <linearGradient id="myGradient0">
-          </linearGradient>
-          <linearGradient id="myGradient1">
-          </linearGradient>
-          <linearGradient id="myGradient2">
-          </linearGradient>
-          <linearGradient id="myGradient3">
-          </linearGradient>
-          <linearGradient id="myGradient4">
-          </linearGradient>
-          <linearGradient id="myGradient5">
-          </linearGradient>
-          <linearGradient id="myGradient6">
-          </linearGradient>
-        </defs>
-      </g>
-    </svg>
+  <div class="sixteen columns">
+    <div class="x-scrollable" id="emotion-wheel">
+      <h3>Emotional gradient over the last <%= @data.count %> days...</h3>
+      <div id="color-key">
+        <table>
+          <tbody>
+            <tr>
+              <td> Emotion-color Key: </td>
+            </tr>
+            <% @color_key.each do |key| %>
+            <tr>
+              <td style="background: <%= key[1] %>">
+                <%= key[0] %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="svg-container x-scrollable">
+        <svg>
+          <g>
+            <defs>
+              <linearGradient id="myGradient0">
+              </linearGradient>
+              <linearGradient id="myGradient1">
+              </linearGradient>
+              <linearGradient id="myGradient2">
+              </linearGradient>
+              <linearGradient id="myGradient3">
+              </linearGradient>
+              <linearGradient id="myGradient4">
+              </linearGradient>
+              <linearGradient id="myGradient5">
+              </linearGradient>
+              <linearGradient id="myGradient6">
+              </linearGradient>
+            </defs>
+          </g>
+        </svg>
+      </div>
     </div>
   </div>
   <div class="clearfix">
