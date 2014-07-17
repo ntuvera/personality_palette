@@ -136,3 +136,9 @@ input#color-to-emotion{
 .form-box textarea input{
   display: inline-block;
 }
+.site-logo{
+  height: 50px;
+  width: 50px;
+  margin-top: 5px;
+  vertical-align: middle;
+}
