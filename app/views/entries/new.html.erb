@@ -3,7 +3,11 @@
 
     <div class="one-third column color-box">
       <h3>How are you feeling?</h3>
-      <p>Please choose a color from the wheel</p>
+      <p>Please choose a color from the wheel.
+      </p>
+      <form name="new-entry" id="entry-log" action="/users/<%= @user.id %>/entries" onsubmit="return validateForm()" method="post">
+        <%= token_tag %>
+        <input style="width:100%" class="centerable" id="color-to-emotion" type="text" name="entry[emotion]" placeholder="I feel..">
     </div>
     <div class="one-third column weather-box">
       <div style="height: 300px;" id="weather-info">
@@ -16,19 +20,16 @@
     <div class="one-third column form-box">
       <h3>Write a little something...</h3>
       <p>please fill in the missing pieces...</p>
-      <form name="new-entry" id="entry-log" action="/users/<%= @user.id %>/entries" onsubmit="return validateForm()" method="post">
-        <%= token_tag %>
-          <input type='hidden' name="entry[date]" data-name="date">
-          <input type='hidden' name="entry[longitude]" data-name="lon">
-          <input type='hidden' name="entry[latitude]" data-name="lat">
-          <input type='hidden' name="entry[user_id]" value="<%= @user.id%>">
-          <input type='hidden' name="entry[emotion_num]" id="emo_num">
-          <input type="hidden" name="entry[weather]" data-name="weather">
-          <input type="hidden" name="entry[weather_img]" data-name="weather_con">
-          Event:<input type="text" name="entry[event]">
-          Emotion:<input id="color-to-emotion" type="text" name="entry[emotion]">
-          Description:<textarea name="entry[description]" rows="5" cols="50" form="entry-log"></textarea>
-          <input type="submit" value="Add Entry">
+        <input type='hidden' name="entry[date]" data-name="date">
+        <input type='hidden' name="entry[longitude]" data-name="lon">
+        <input type='hidden' name="entry[latitude]" data-name="lat">
+        <input type='hidden' name="entry[user_id]" value="<%= @user.id%>">
+        <input type='hidden' name="entry[emotion_num]" id="emo_num">
+        <input type="hidden" name="entry[weather]" data-name="weather">
+        <input type="hidden" name="entry[weather_img]" data-name="weather_con">
+        Event:<input type="text" name="entry[event]">
+        Description:<textarea name="entry[description]" rows="5" cols="50" form="entry-log"></textarea>
+        <input type="submit" value="Add Entry">
       </form>
 
     </div>

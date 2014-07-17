@@ -25,7 +25,7 @@ window.onload=function(){
         .attr("width", 300)
         .attr("height", 310)
         .append("g")
-        .attr("transform", "translate(150,150)");
+        .attr("transform", "translate(150, 150)");
 
       var wheel = svg.datum([1, 1, 1, 1, 1, 1])
         .selectAll("path")

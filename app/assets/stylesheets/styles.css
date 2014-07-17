@@ -43,7 +43,7 @@ table td{
   display: block;
   background: #EBF4FA;
   box-shadow: 2px 2px 10px #808080;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 .nav-bar ul{
   float:right;
@@ -100,7 +100,9 @@ div .single-entry{
   margin-right: auto;
   margin-left: auto;
 }
-
+input#color-to-emotion{
+  position: center;
+}
 .neutral{
   background: rgba(0,0,0,0.2);
 }
@@ -129,10 +131,7 @@ div .single-entry{
 .svg-container{
   width: 100%;
 }
-.color-box {
-  text-align: center;
-}
-.center {
+.centerable {
   text-align: center;
   width: 100%;
 }
