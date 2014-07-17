@@ -3,7 +3,8 @@
 
     <div class="one-third column color-box">
       <h3>How are you feeling?</h3>
-      <p>Please choose a color from the wheel.
+      <p>
+        Please choose a color from the wheel.
       </p>
       <form name="new-entry" id="entry-log" action="/users/<%= @user.id %>/entries" onsubmit="return validateForm()" method="post">
         <%= token_tag %>
