@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>PersonalityPalette</title>
+  <link href='http://fonts.googleapis.com/css?family=Hind:400,300' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=2.0; user-scalable=2;"/>
+  <link data-turbolinks-track="true" href="/assets/styles.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/layout.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/skeleton.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/base.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/css/font-awesome.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/css/font-awesome.min.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/application.css?body=1" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/d3.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/turbolinks.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/colorWheel.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/weather.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/emotionWheel.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/calendar.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/scripts.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/application.js?body=1"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="xucSMNCu7iHPKp136IVTw+8buqkxKErUVfcR5L7U+rM=" name="csrf-token" />
+
+</head>
+<body class="user_sessions">
+
+  <div id="nav">
+    <div class="container">
+
+        <h2 class="six columns">
+          <i>Personality Palette</i>
+          <img alt="Logo" class="site-logo add-bottom" src="/assets/logo.png" />
+        </h2>
+        <ul class="six columns nav-bar">
+          <li><a data-method="get" href="/users/2">Home</a></li>
+          <li><a data-method="get" href="/users/2/entries/new">New Entry</a></li>
+          <li><a data-method="get" href="/users/2/entries">View All</a></li>
+          <li><a data-method="post" href="/logout" rel="nofollow">Logout</a></li>
+        </ul>
+    </div>
+  </div>
+
+  <div id="flash">
+    <div class="container">
+      <div class="sixteen columns">
+          <p class="session-log" id="notice"></p>
+      </div>
+    </div>
+  </div>
+
+ <div class="container">
+
+    <div class="offset-by-five">
+  <form accept-charset="UTF-8" action="/user_sessions" class="six columns" id="log-window" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xucSMNCu7iHPKp136IVTw+8buqkxKErUVfcR5L7U+rM=" /></div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="text" value="ntuvera@gmail.com" />
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" value="password" />
+    </div>
+    <div class="actions">
+      <input name="commit" type="submit" value="Login" />
+      <a class="button centerable" data-method="get" href="/users/new">Register</a>
+    </div>
+</form></div>
+
+
+</div>
+
+
+</body>
+</html>

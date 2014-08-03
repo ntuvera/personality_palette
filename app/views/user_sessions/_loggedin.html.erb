@@ -1,0 +1,16 @@
+<div class="offset-by-five">
+  <%= form_tag user_sessions_path, :id => 'log-window', :class => 'six columns', :method => :post do %>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag('email', 'ntuvera@gmail.com') %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag('password', 'password') %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Login" %>
+      <%= link_to "Register", new_user_path, :class => "button centerable", :method => :get %>
+    </div>
+  <% end %>
+</div>

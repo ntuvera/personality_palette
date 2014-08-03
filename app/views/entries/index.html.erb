@@ -1,4 +1,3 @@
-<!-- script tag to pass variables from controller to javascript can substitute with $.ajax-->
 <%= javascript_tag "var entries = #{@entries.to_json};
                     var data = #{@data};  " %>
 
