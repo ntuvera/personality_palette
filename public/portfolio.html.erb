@@ -25,7 +25,7 @@
 <script data-turbolinks-track="true" src="/assets/scripts.js?body=1"></script>
 <script data-turbolinks-track="true" src="/assets/application.js?body=1"></script>
   <meta content="authenticity_token" name="csrf-param" />
-<meta content="xucSMNCu7iHPKp136IVTw+8buqkxKErUVfcR5L7U+rM=" name="csrf-token" />
+<meta content="Ljdzgx9xMPmaG++RE1K2NUhTwmKNfHF2drLI5jevLjw=" name="csrf-token" />
 
 </head>
 <body class="user_sessions">
@@ -38,10 +38,8 @@
           <img alt="Logo" class="site-logo add-bottom" src="/assets/logo.png" />
         </h2>
         <ul class="six columns nav-bar">
-          <li><a data-method="get" href="/users/2">Home</a></li>
-          <li><a data-method="get" href="/users/2/entries/new">New Entry</a></li>
-          <li><a data-method="get" href="/users/2/entries">View All</a></li>
-          <li><a data-method="post" href="/logout" rel="nofollow">Logout</a></li>
+            <li><a href="/users/new">Register</a></li>
+            <li><a href="/login">Login</a></li>
         </ul>
     </div>
   </div>
@@ -50,6 +48,7 @@
     <div class="container">
       <div class="sixteen columns">
           <p class="session-log" id="notice"></p>
+          <p class="session-log" id="alert"></p>
       </div>
     </div>
   </div>
@@ -57,7 +56,7 @@
  <div class="container">
 
     <div class="offset-by-five">
-  <form accept-charset="UTF-8" action="/user_sessions" class="six columns" id="log-window" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xucSMNCu7iHPKp136IVTw+8buqkxKErUVfcR5L7U+rM=" /></div>
+  <form accept-charset="UTF-8" action="/user_sessions" class="six columns" id="log-window" method="post"><%= token_tag %><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Ljdzgx9xMPmaG++RE1K2NUhTwmKNfHF2drLI5jevLjw=" /></div>
     <div class="field">
       <label for="email">Email</label>
       <input id="email" name="email" type="text" value="ntuvera@gmail.com" />
